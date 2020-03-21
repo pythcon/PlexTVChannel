@@ -39,7 +39,7 @@ It is imperative that you populate the variables before you run the script!
 Launch VLC by using the command making sure to input the ip address of your machine and any port you would like to broadcast your http stream on:
 
 ```
-vlc -vvv /home/plex/tv/playlist.m3u --sout '#transcode{vcodec=h264, acodec=mp3, vb=800, ab=128} :standard{access=http, mux=ts, dst=<ip:port>}’ --no-sout-all --sout-mux-caching=10000
+vlc -vvv /path/to/tv/playlist.m3u --sout-keep --sout '#transcode{vcodec=h264, acodec=aac, vb=800, ab=128} :standard{access=http, mux=ts, dst=<ip:port>}’ --sout-mux-caching=5000
 ```
 
 *Step 3:* Open VLC on another computer/device and verify that your stream is working by using the ip address and port that you specified in the previous command.
