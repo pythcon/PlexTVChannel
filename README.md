@@ -98,7 +98,7 @@ All that was added was a --loop to keep the stream from replaying the same video
 ---
 
 **Extras:**
-Since I am a perfectionist, I setup my tvchannel to be completely automated. I have created a cron job with scripts so I never have to touch it. In an ideal situation, you would want to setup your tv station on a VM so it is contained in its own instance. This makes it very easy to test without having to reboot your whole setup. I will include links to everything! (Make sure you update the scripts with the correct paths for your system and ip:port for VLC)
+Since I am a perfectionist, I setup my tvchannel to be completely automated. I have created a cron job with scripts so I never have to touch it. In an ideal situation, you would want to setup your tv station on a VM so it is contained in its own instance. This makes it very easy to test without having to reboot your whole setup. Make sure you update the scripts with the correct details listed below!
 
 My cron job looks like this:
 
@@ -109,6 +109,8 @@ My cron job looks like this:
 *tvStart.sh & tvContinue.sh instructions:*
 
 *Editing the Path:* There is some editing needed in both **tvStart.sh** and **tvContinue.sh**. Open up both files and change all of the paths to your current setup. Just do a replace and search for **/path/to/tv/**.
+
+*Editing the VLC IP:* Locate the ip:port phrase in the vlc command and change it with your current setup. Note: This is not always the same ip address if you are running vlc on a different machine.
 
 *Editing the cURL statement (automatically refreshes the guide in Plex):* Start off by locating the cURL command in both scripts. 
 - Get your API token. Instructions can be found [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/).
