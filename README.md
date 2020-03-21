@@ -1,6 +1,6 @@
 # DIY TV Channel for Plex
 
-**Brief Description:** generatePlaylist.py will output blocks of episodes ranging from 40mins-1hr (blocks do not exceed 1hr) when provided a list of tv show directories. The two other bash script included are for linux users who want to setup total automation. These are run as a cron job and will take care of everything for you.
+**Brief Description:** generatePlaylist.py will output blocks of episodes ranging from 40mins-1hr (blocks do not exceed 1hr) when provided a list of tv show directories. generateXMLTV.py will output guide data to import into plex. The two other bash script included are for linux users who want to setup total automation. These are run as a cron job and will take care of everything for you.
 
 ---
 
@@ -14,7 +14,7 @@ VLC
 
 Python (if you want to generate a playlist and guide)
 
-pip3 install moviepy
+moviepy (pip3 install moviepy)
 
 FFmpeg [linux guide] (https://linoxide.com/linux-how-to/install-ffmpeg-centos-7/)
 
@@ -106,7 +106,7 @@ My cron job looks like this:
 @reboot /path/to/tv/tvStart.sh
 * * * * * /path/to/tv/tvContinue.sh
 ```
-*tvStart.sh & tvContinue.sh insructions:*
+*tvStart.sh & tvContinue.sh instructions:*
 
 *Editing the Path:* There is some editing needed in both **tvStart.sh** and **tvContinue.sh**. Open up both files and change all of the paths to your current setup. Just do a replace and search for **/path/to/tv/**.
 
@@ -128,4 +128,4 @@ Feel free to message me with any questions you might have.
 
 -**Todd**
 
-[My Website](http://toddamurphy.me/index.php#contact)
+[My Website](http://toddamurphy.me/)
