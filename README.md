@@ -110,10 +110,10 @@ My cron job looks like this:
 
 *Editing the Path:* There is some editing needed in both **tvStart.sh** and **tvContinue.sh**. Open up both files and change all of the paths to your current setup. Just do a replace and search for **/path/to/tv/**.
 
-*Editing the VLC IP:* Locate the ip:port phrase in the vlc command and change it with your current setup. Note: This is not always the same ip address if you are running vlc on a different machine.
+*Editing the VLC IP:* Locate the **ip:port** phrase in the VLC command and change it with your current setup. Note: This is not always the same ip address if you are running VLC on a different machine.
 
-*Editing the cURL statement (automatically refreshes the guide in Plex):* Start off by locating the cURL command in both scripts. 
-- Get your API token. Instructions can be found [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/).
+*Editing the cURL statement (automatically refreshes the guide in Plex):* Start off by locating the **cURL** command in both scripts. 
+- Get your **API token.** Instructions can be found [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/).
 - Replace the **PlexServerIP** with your server IP.
 - Replace the **DVR ID** with your DVR ID. Go to https://PlexServerIP:32400/livetv/dvrs/?X-Plex-Token=api-token and locate the ID of your DVR.
 - Populate the full statement.
