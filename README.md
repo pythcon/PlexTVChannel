@@ -6,17 +6,18 @@
 
 **Software Needed**:
 
-Plex (Plex Pass Required)
+- Plex (Plex Pass Required)
 
-[xTeVe] (https://xteve.de)
+- [xTeVe] (https://xteve.de)
 
-VLC
+- VLC
 
-Python (if you want to generate a playlist and guide)
+- Python3 (if you want to generate a playlist and guide)
 
-moviepy (pip3 install moviepy)
+  - moviepy (pip3 install moviepy)
+  - tvdb_api (pip3 install tvdb_api)
 
-FFmpeg [linux guide] (https://linoxide.com/linux-how-to/install-ffmpeg-centos-7/)
+- FFmpeg [linux guide] (https://linoxide.com/linux-how-to/install-ffmpeg-centos-7/)
 
 ---
 
