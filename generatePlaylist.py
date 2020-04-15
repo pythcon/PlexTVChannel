@@ -269,16 +269,17 @@ while len(showDirectory) > 0:
         # Get Description of Show (Episode Name)
         showDesc = os.path.basename(randomEpisode)
         showDesc = os.path.splitext(showDesc)[0]
-
-        # Only check for specific commercial on initial run-through
-        if initialRunThrough:
-            initialRunThrough = False # No longer initial run-through
-            
-            # Check to see if there is specific commercial
-            for show in commercialSpecific.keys():
-                if show in showName.lower():
-                    randomCommercial = random.choice(commercialSpecific[show])
-                    specificCommercialFound = True # Found a specific commercial
+        
+        if (commercials):
+            # Only check for specific commercial on initial run-through
+            if initialRunThrough:
+                initialRunThrough = False # No longer initial run-through
+                
+                # Check to see if there is specific commercial
+                for show in commercialSpecific.keys():
+                    if show.lower() in showName.lower():
+                        randomCommercial = random.choice(commercialSpecific[show])
+                        specificCommercialFound = True # Found a specific commercial
 
         print("Writing: " + showName)
         
@@ -315,37 +316,9 @@ while len(showDirectory) > 0:
                 
             m3u.write("#EXTINF: " + str(commercial_duration) + ", Commercial\n")
             m3u.write("file://" + randomCommercial + "\n")
-            cur_duration += commercial_duration
 
         # Round duration to the nearest second
-        cur_duration = math.ceil(cur_duration)
-
-        # Round duration to the nearest minute, but value reamins in seconds
-        remainderInSeconds = cur_duration % 60
-
-        if remainderInSeconds >= 30: # Round up or down
-            roundUp = True
-        else:
-            roundUp = False
-
-        while remainderInSeconds != 0:
-            if roundUp:
-                # If you're rounding up and there is enough time, add another commercial
-                if remainderInSeconds < 45:
-                    randomCommercial = getRandomCommercial(commercialList).encode('utf-8').strip().decode()
-
-                    commercial_duration = checkDuration(randomCommercial)
-                        
-                    m3u.write("#EXTINF: " + str(commercial_duration) + ", Commercial\n")
-                    m3u.write("file://" + randomCommercial + "\n")
-                    cur_duration += commercial_duration
-                else:
-                    cur_duration += 1
-            else:
-                cur_duration -= 1
-            remainderInSeconds = math.ceil(cur_duration) % 60
-
-        # Add Episode and Duration to dictionary
+        cur_duration = math.ceil(cur_duration)        # Add Episode and Duration to dictionary
         showDurations.append(cur_duration)
 
         # Remove the episode
