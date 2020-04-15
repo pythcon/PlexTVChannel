@@ -50,6 +50,12 @@ Launch VLC by using the command making sure to input the ip address of your mach
 ```
 vlc -vvv /path/to/tv/playlist.m3u --sout-keep --sout '#transcode{vcodec=h264, acodec=aac, vb=800, ab=128} :standard{access=http, mux=ts, dst=<ip:port>}’ --sout-mux-caching=5000
 ```
+**Note**: If you have a **headless** install of a server, you need to use **cvlc** instead of vlc.
+
+```
+cvlc -vvv /path/to/tv/playlist.m3u --sout-keep --sout '#transcode{vcodec=h264, acodec=aac, vb=800, ab=128} :standard{access=http, mux=ts, dst=<ip:port>}’ --sout-mux-caching=5000
+```
+**Second Note**: If you copy and paste this command, it may not work. If you are not immediately getting lots of output, **manually type the command**.
 
 ---
 
