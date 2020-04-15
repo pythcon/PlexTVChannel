@@ -265,11 +265,12 @@ while len(showDirectory) > 0:
 
         # Get Name of Show
         showName = randomEpisode.split(dir)[1].split('/')[0]
+        showName = showName.encode('utf-8').strip().decode()
         
         # Get Description of Show (Episode Name)
         showDesc = os.path.basename(randomEpisode)
         showDesc = os.path.splitext(showDesc)[0]
-        
+
         if (commercials):
             # Only check for specific commercial on initial run-through
             if initialRunThrough:
@@ -298,6 +299,10 @@ while len(showDirectory) > 0:
         showDesc += " ||\n\n "
         showDesc += getShowDescription(showName)
 
+        #Unicode Stuff
+        showName = showName.encode('ascii', 'ignore').decode('ascii')
+        showDesc = showDesc.encode('ascii', 'ignore').decode('ascii')
+
         # Write episode to xmltv file
         xmltv.write("<programme channel='1' start='{tempStartTime} " + timezone + "' stop='{tempEndTime} " + timezone + "'>\n")
         xmltv.write("<title lang='en'>" + showName + "</title>\n")
@@ -318,7 +323,9 @@ while len(showDirectory) > 0:
             m3u.write("file://" + randomCommercial + "\n")
 
         # Round duration to the nearest second
-        cur_duration = math.ceil(cur_duration)        # Add Episode and Duration to dictionary
+        cur_duration = math.ceil(cur_duration)
+
+        # Add Episode and Duration to dictionary
         showDurations.append(cur_duration)
 
         # Remove the episode
