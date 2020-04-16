@@ -40,7 +40,7 @@ It is imperative that you populate the variables before you run the script!
 
 ---
 
-*Step 1:* Generating your M3U playlist for VLC and XMLTV for Plex. Run the Python script by executing **python3 generatePlaylist.py <backup? (yes | no)>**. To generate the XMLTV Guide, run **python3 generateXMLTV.py**. The script will recognize if you selected backup or not.
+*Step 1:* Generating your M3U playlist for VLC and XMLTV for Plex. Run the Python script by executing **python3 generatePlaylist.py <backup? (yes | no)> <commercials? (yes | no)>**. To generate the XMLTV Guide, run **python3 generateXMLTV.py**. The script will recognize if you selected backup or not.
 
 ---
 
