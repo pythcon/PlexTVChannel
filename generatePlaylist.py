@@ -12,7 +12,7 @@ import tvdb_api
 backup = False
 commercials = False
 if not len(sys.argv) > 1:
-    print ("Incorrect Usage: python3 generateShowList.py <backup? (yes | no)>")
+    print ("Incorrect Usage: python3 generateShowList.py <backup? (yes | no)> <commercials? (yes | no)>")
     exit()
 else:
     if sys.argv[1] == "yes":
