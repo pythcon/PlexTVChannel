@@ -297,7 +297,7 @@ while len(showDirectory) > 0:
 
         # Write episode to m3u file
         m3u.write("#EXTINF: " + str(cur_duration) + ", " + showDesc + "\n")
-        m3u.write("file://" + randomEpisodeWrite + "\n")
+        m3u.write("file:///" + randomEpisodeWrite + "\n")
 
         # Add extra guide information
         showDesc += " ||\n\n "
@@ -324,7 +324,7 @@ while len(showDirectory) > 0:
             commercial_duration = checkDuration(randomCommercial)
                 
             m3u.write("#EXTINF: " + str(commercial_duration) + ", Commercial\n")
-            m3u.write("file://" + randomCommercial + "\n")
+            m3u.write("file:///" + randomCommercial + "\n")
 
         # Round duration to the nearest second
         cur_duration = math.ceil(cur_duration)
