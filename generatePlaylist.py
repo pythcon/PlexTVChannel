@@ -39,7 +39,7 @@ cartoons = ["show1", "show2", "show3"]
 dir = "" # Directory to grab shows from (make sure there is a "/" at the end!)
 tvDirectory = "" # Directory where files will be generated (make sure there is a "/" at the end!)
 commercialsDirectory = "" # Directory where commercials will be pulled from (make sure there is a "/" at the end!)
-timezone = "" # Enter Timezone
+timezone = "" # Enter Timezone (Example: "-0400" for EST)
 showPoster = ""
 channelName = ""
 
